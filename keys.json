@@ -7,7 +7,7 @@
       "user": "admin",
       "tier": "admin",
       "expires": "2099-12-31",
-      "hwid_lock": null,
+      "hwid_lock": "5d5f8f683dcef38d",
       "revoked": false
     },
     {
