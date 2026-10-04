@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Kestrel Key Server</title>
+<style>
+  body { background:#0b0d10; color:#c9d1d9; font-family:ui-monospace,monospace; padding:40px; }
+  input,button { background:#161b22; color:#c9d1d9; border:1px solid #30363d; padding:10px; font-family:inherit; }
+  button { cursor:pointer; }
+  pre { background:#161b22; padding:16px; border:1px solid #30363d; }
+</style>
+</head>
+<body>
+<h1>KESTREL KEY SERVER</h1>
+<input id="key" placeholder="ZKH-XXXX-XXXX-XXXX" size="28">
+<button onclick="run()">VERIFY</button>
+<pre id="out">awaiting input</pre>
+<script>
+async function run() {
+  const k = document.getElementById('key').value.trim();
+  const r = await fetch('keys.json?t=' + Date.now(), { cache: 'no-store' });
+  const d = await r.json();
+  const e = d.keys.find(x => x.key === k);
+  if (!e) return document.getElementById('out').textContent = JSON.stringify({ ok: false, reason: 'not_found' }, null, 2);
+  if (e.revoked) return document.getElementById('out').textContent = JSON.stringify({ ok: false, reason: 'revoked' }, null, 2);
+  if (new Date() > new Date(e.expires)) return document.getElementById('out').textContent = JSON.stringify({ ok: false, reason: 'expired' }, null, 2);
+  document.getElementById('out').textContent = JSON.stringify({ ok: true, user: e.user, tier: e.tier }, null, 2);
+}
+</script>
+</body>
+</html>
