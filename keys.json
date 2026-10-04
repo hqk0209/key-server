@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "issued": "2026-10-04",
+  "keys": [
+    {
+      "key": "ZKH-7F3A-9C2E-4B81",
+      "user": "hqk0209",
+      "tier": "pro",
+      "expires": "2027-10-04",
+      "hwid_lock": null,
+      "revoked": false
+    },
+    {
+      "key": "ZKH-TEST-0000-0001",
+      "user": "test",
+      "tier": "basic",
+      "expires": "2026-12-31",
+      "hwid_lock": null,
+      "revoked": false
+    }
+  ]
+}
