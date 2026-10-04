@@ -4,17 +4,17 @@
   "keys": [
     {
       "key": "hqk02092009",
-      "user": "hqk0209",
-      "tier": "pro",
-      "expires": "2027-10-04",
+      "user": "admin",
+      "tier": "admin",
+      "expires": "2099-12-31",
       "hwid_lock": null,
       "revoked": false
     },
     {
-      "key": "ZKH-TEST-0000-0001",
-      "user": "test",
-      "tier": "basic",
-      "expires": "2026-12-31",
+      "key": "huygay2005",
+      "user": "huygay2005",
+      "tier": "pro",
+      "expires": "2026-11-03",
       "hwid_lock": null,
       "revoked": false
     }
